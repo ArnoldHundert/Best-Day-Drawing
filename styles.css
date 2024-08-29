@@ -29,8 +29,8 @@ body {
 
 /* .intro-banner {
    z-index: 100;
-} */
-
+   } */
+   
 .scene-bg {
    position: absolute;
    top: 100vh;
@@ -57,11 +57,11 @@ body {
    top: 50px;
    left: 150px;
    box-shadow:
-      10px 125px white,
-      200px 75px white,
-      600px 25px white,
-      850px 125px white;
-      animation: rolling-clouds 5s infinite alternate;
+   10px 125px white,
+   200px 75px white,
+   600px 25px white,
+   850px 125px white;
+   animation: rolling-clouds 5s infinite alternate;
    /* clip-path: circle(49.3% at 63% 50%); */
 }
 
@@ -92,10 +92,30 @@ body {
    z-index: 10;
 }
 
-/* .mailbox {
-   position: relative;
-   top: 50vh;
+.mailbox {
+   position: absolute;
+   text-align: center;
    width: 200px;
    height: 75px;
-   background-color: #000;
-} */
+   top: 325px;
+   /* left: 300px; */
+   right: 0px;
+   border-radius: 22% 22% 0% 0% / 27% 27% 0% 0% ;
+   background-color: #3c3c3c;
+   z-index: 100;
+}         
+.mailbox:hover {
+   animation-name: mailbox-appears;
+   animation-iteration-count: 1;
+   animation-duration: 7s;
+}
+
+@keyframes mailbox-appears {
+   from {
+      right: 0px;
+   }
+   to {
+      right: 400px;
+   }
+}
+
