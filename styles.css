@@ -4,15 +4,16 @@ html {
 
 body {
    background: #000;
-   height: 200vh;
+   /* height: 200vh; */
+   /* height: 198vh; */
+   height: 196vh;
    display: grid;
    place-items: center;
-   margin: 0;
-   padding: 0;
-}   
+   /* margin: 0; */
+   /* padding: 0; */
+}
 
 .start-button {
-   position: relative;
    background-color: red;
    height: 100px;
    width: 300px;
@@ -21,18 +22,19 @@ body {
    font-size: 25px;
    font-weight: 600;
    cursor: pointer;
-   top: 140px;
-   /* margin: auto; */
+   /* position: absolute; */
+   /* top: 120px; */
    z-index: 500;
 }
 
-.intro-banner {
+/* .intro-banner {
    z-index: 100;
-}
+} */
 
 .scene-bg {
    position: absolute;
    top: 100vh;
+   width: 100vw;
 }
 
 .scene-sky {
@@ -41,18 +43,52 @@ body {
    width: 100vw;
    display: flex;
    justify-content: center;
-   position: relative;
+   position: absolute;
+   top: 0px;
+   left: 0px;
    z-index: 20;
+}
+
+.clouds {
+   position: absolute;
+   width: 120px;
+   height: 70px;
+   border-radius: 40%;
+   top: 50px;
+   left: 150px;
+   box-shadow:
+      10px 125px white,
+      200px 75px white,
+      600px 25px white,
+      850px 125px white;
+      animation: rolling-clouds 5s infinite alternate;
+   /* clip-path: circle(49.3% at 63% 50%); */
+}
+
+@keyframes rolling-clouds{
+   from {
+      box-shadow:
+      10px 105px white,
+      200px 75px white,
+      600px 25px white,
+      850px 125px white;
+   }
+   to {
+      box-shadow:
+      210px 50px white,
+      400px 75px white,
+      800px 15px white,
+      1050px 125px white;
+   }
 }
 
 .scene-grass {
    background: #74ac00;
-   position: relative;
-   /* position: absolute; */
+   position: absolute;
    height: 60vh;
-   /* height: 100vh; */
+   top: 40vh;
+   left: 0px;
    width: 100vw;
-   /* top: 40vh; */
    z-index: 10;
 }
 
