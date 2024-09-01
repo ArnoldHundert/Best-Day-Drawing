@@ -10,11 +10,11 @@ body {
 }
 
 .start-button {
-   background-color: red;
+   background-color:#ff0000;
    height: 100px;
    width: 300px;
    border-radius: 15px;
-   color: white;
+   color: #fff;
    font-size: 25px;
    font-weight: 600;
    cursor: pointer;
@@ -51,11 +51,28 @@ body {
    top: 50px;
    left: 150px;
    box-shadow:
-   10px 125px white,
-   200px 75px white,
-   600px 25px white,
-   850px 125px white;
+   10px 125px #fff,
+   300px 55px #f0f0f0,
+   550px 25px #e0dee0,
+   850px 125px #fff;
    animation: rolling-clouds 5s infinite alternate;
+}
+
+@keyframes rolling-clouds{
+   from {
+      box-shadow:
+      10px 105px #fff,
+      300px 55px #f0f0f0,
+      550px 25px #e0dee0,
+      850px 125px #fff;
+   }
+   to {
+      box-shadow:
+      210px 50px #fff,
+      500px 115px #f0f0f0,
+      800px 15px #e0dee0,
+      1050px 125px #fff;
+   }
 }
 
 .scene-grass {
@@ -76,8 +93,24 @@ body {
    right: 0px;
    opacity: 0;
    z-index: 101;
-   animation: mb-fade-in 7s 1 4s forwards, mailbox-slide-left 5s 10s 1 forwards;
+   animation: mb-fade-in 10s 1 5s forwards, mailbox-slide-left 5s 10s 1 forwards;
+   /* animation: mb-fade-in 7s 1 4s forwards, mailbox-slide-left 5s 10s 1 forwards; */
    /* border: 2px solid red; */
+}
+
+@keyframes mb-fade-in {
+   0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes mailbox-slide-left {
+   from {
+      right: 0px;
+   }
+   to {
+      right: 700px;
+      /* right: 500px; */
+   }
 }
 
 .mailbox {
@@ -112,87 +145,89 @@ body {
 
 .envelope-container {
    position: absolute;
-   height: 512px;
-   /* height: 312px; */
-   width: 205px;
-   bottom: -615px;
-   right: 698px;
-   /* right: 700px; */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 312px;
+   width: 705px;
+   bottom: -469px;
+   right: 444px;
+   opacity: 0;
    /* z-index: 100; */
    z-index: 555;
+   animation: envelope-fade-in 8s 1 15s forwards;
    /* border: 2px solid blue; */
 }
 
-.envelope {
-   position: absolute;
-   height: 75px;
-   width: 204px;
-   bottom: 238px;
-   /* bottom: 258px; */
-   background-color: #f0f0f0;
-   z-index: 555;
-   /* animation: envelope-grow 3s 1 forwards; */
-   border: 2px solid green;
-}
-
-.return-address {
-   position: absolute;
-   top: 0px;
-   left: 7px;
-   font-size: 8px;
-}
-
-.mailing-address {
-   position: absolute;
-   top: 17px;
-   left: 77px;
-   font-size: 8px;
-}
-
-
-@keyframes rolling-clouds{
-   from {
-      box-shadow:
-      10px 105px white,
-      200px 75px white,
-      600px 25px white,
-      850px 125px white;
-   }
-   to {
-      box-shadow:
-      210px 50px white,
-      400px 75px white,
-      800px 15px white,
-      1050px 125px white;
-   }
-}
-
-@keyframes mb-fade-in {
+@keyframes envelope-fade-in {
    0% { opacity: 0; }
   100% { opacity: 1; }
 }
 
-@keyframes mailbox-slide-left {
-   from {
-      right: 0px;
-   }
-   to {
-      right: 700px;
-      /* right: 500px; */
-   }
+.envelope {
+   height: 75px;
+   width: 204px;
+   bottom: 238px;
+   background-color: #f0f0f0;
+   z-index: 555;
+   animation: 
+      envelope-grow 7s 1 20s forwards,
+      envelope-rotateY 4s 1 28s forwards;
+   border: 2px solid green;
 }
 
 @keyframes  envelope-grow {
    from {
-      height: 56px;
+      height: 75px;
+      width: 204px;
    }
    to {
-      height: 156px;
+      height: 300px;
+      width: 700px;
    }
-   /* transform: scale(2.5) translate(-100%, -100%); */
 }
 
+@keyframes envelope-rotateY {
+   from {
+      transform: rotateY(0deg);
+   }
+   to {
+      transform: rotateY(360deg);
+   }
+}
 
+.return-address {
+   position: relative;
+   font-size: 8px;
+   left: 17px;
+   animation: return-address-grow 5s 1 20s forwards;
+}
 
+@keyframes return-address-grow {
+   from {
+      font-size: 8px;
+   }
+   to {
+      font-size: 32px;
+   }
+}
+
+.mailing-address {
+   position: relative;
+   font-size: 8px;
+   left: 74px;
+   animation: mailing-address-grow 5s 1 20s forwards;
+}
+
+@keyframes mailing-address-grow {
+   from {
+      font-size: 8px;
+      left: 74px;
+   }
+   to {
+      font-size: 32px;
+      left: 250px;
+   }
+}
 
 
