@@ -1,13 +1,24 @@
-		z-index List
+                        z-index List
 
 * Start Button		500
-
-* intro-banner		100
 
 * scene-sky		20
 * scene-grass		10
 
+* house-container		200
+* roof			200
+* roof-border		199
+* house-build		200
+* bricks			200
+* door			200
+* doorknob		200
+
 * mb-container		101
 * mailbox			100
-* envelope-container		100/555
-* envelope		555
+* envelope-container		200
+* envelope		200
+
+* envelope-flap		198
+* letter			199
+
+* ending-banner		100

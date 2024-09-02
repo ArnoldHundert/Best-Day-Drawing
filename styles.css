@@ -13,6 +13,12 @@ body {
    place-items: center;
 }
 
+/* .beginning-banner {
+   position: absolute;
+   top: 0px;
+   z-index: 100;
+   } */
+
 .start-button {
    background-color:#ff0000;
    height: 100px;
@@ -25,10 +31,6 @@ body {
    z-index: 500;
 }
 
-/* .intro-banner {
-   z-index: 100;
-   } */
-   
 .scene-bg {
    position: absolute;
    top: 100vh;
@@ -54,6 +56,7 @@ body {
    border-radius: 40%;
    top: 50px;
    left: 150px;
+   opacity: 0.8;
    box-shadow:
    10px 125px #fff,
    300px 55px #f0f0f0,
@@ -94,23 +97,38 @@ body {
    height: 493px;
    width: 217px;
    top: 120px;
-   /* top: 200px; */
    left: 20px;
-   /* opacity: 0; */
-   z-index: 555;
+   opacity: 0;
+   z-index: 200;
+   animation: 
+   house-fade-in 10s 1 5s forwards,
+   house-slide-left 5s 15s 1 forwards;
+   /* house-slide-left 5s 10s 1 forwards; */
    /* border: 2px solid green; */
+}
+
+@keyframes house-fade-in {
+   0% { opacity: 0; }
+   100% { opacity: 1; }
+}
+
+@keyframes house-slide-left {
+   from {
+      left: 20px;
+   }
+   to {
+      left: -300px;
+   }
 }
 
 .roof {
    position: absolute;
-   /* height: 102px;
-   width: 215px; */
    height: 105px;
    width: 213px;
-   /* top: -3px; */
    top: 3px;
    background-color: #6d6e76;
-   z-index: 555;
+   opacity: 1;
+   z-index: 200;
    clip-path: polygon(48% 17%, 0% 100%, 100% 100%);
    /* border: 2px solid blue; */
 }
@@ -119,25 +137,22 @@ body {
    position: relative;
    height: 109px;
    width: 217px;
-   /* top: -3px; */
    left: -2px;
-   /* background-color: crimson; */
    background-color: black;
-   z-index: 554;
+   z-index: 199;
    clip-path: polygon(48% 17%, 0% 100%, 100% 100%);
    border: 1px solid black;
 }
 
 .house-build {
    display: grid;
-   /* grid-template-rows: auto; */
    grid-template-rows: repeat(auto-fill, 23px);
    grid-template-columns: repeat(auto-fill, 40px);
    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
    height: 489px;
    width: 213px;
    background-color: #D2B48C;
-   z-index: 555;
+   z-index: 200;
    border: 2px solid black;
 }
 
@@ -145,7 +160,30 @@ body {
    height: 25px;
    width: 42px;
    background-color: #914f41;
-   z-index: 555;
+   z-index: 200;
+   border: 1px solid black;
+}
+
+.door {
+   position: absolute;
+   width: 87px;
+   height: 125px;
+   background-color: #7e5525;
+   top: 471px;
+   left: 63px;
+   z-index: 200;
+   border: 1px solid black;
+}
+
+.doorknob {
+   position: absolute;
+   width: 20px;
+   height: 20px;
+   background-color: black;
+   border-radius: 50%;
+   right: 5px;
+   top: 50px;
+   z-index: 200;
    border: 1px solid black;
 }
 
@@ -155,15 +193,17 @@ body {
    width: 200px;
    top: 275px;
    right: 0px;
-   /* opacity: 0; */
+   opacity: 0;
    z-index: 101;
-   /* animation: mb-fade-in 10s 1 5s forwards, mailbox-slide-left 5s 10s 1 forwards; */
-   border: 2px solid red;
+   animation: 
+      mb-fade-in 10s 1 5s forwards,
+      mailbox-slide-left 5s 15s 1 forwards;
+   /* border: 2px solid red; */
 }
 
 @keyframes mb-fade-in {
    0% { opacity: 0; }
-  100% { opacity: 1; }
+   100% { opacity: 1; }
 }
 
 @keyframes mailbox-slide-left {
@@ -172,7 +212,6 @@ body {
    }
    to {
       right: 700px;
-      /* right: 500px; */
    }
 }
 
@@ -216,15 +255,35 @@ body {
    bottom: -469px;
    right: 444px;
    opacity: 0;
-   /* z-index: 100; */
-   z-index: 555;
-   /* animation: envelope-fade-in 8s 1 15s forwards; */
+   z-index: 200;
+   animation:
+      envelope-fade-in 8s 1 25s forwards,
+      envelope-move-down 7s 1 35s forwards,
+      envelope-move-down-again 5s 1 63s forwards;
    /* border: 2px solid blue; */
 }
 
 @keyframes envelope-fade-in {
    0% { opacity: 0; }
-  100% { opacity: 1; }
+   100% { opacity: 1; }
+}
+
+@keyframes envelope-move-down {
+   from {
+      bottom: -469px;
+   }
+   to {
+      bottom: -569px;
+   }
+}
+
+@keyframes envelope-move-down-again {
+   from {
+      bottom: -569px;
+   }
+   to {
+      bottom: -720px;
+   }
 }
 
 .envelope {
@@ -232,11 +291,40 @@ body {
    width: 204px;
    bottom: 238px;
    background-color: #f0f0f0;
-   z-index: 555;
-   /* animation: 
-      envelope-grow 7s 1 20s forwards,
-      envelope-rotateY 4s 1 28s forwards; */
-   border: 2px solid green;
+   border-top: 1px solid #009cff;
+   z-index: 200;
+   animation: 
+   envelope-grow 7s 1 35s forwards,
+   envelope-rotateY 4s 1 42s forwards;
+   /* border: 2px solid green; */
+}
+
+.envelope-flap {
+   position: absolute;
+   height: 300px;
+   width: 700px;
+   bottom: 200px;
+   background-color: #f0f0f0;
+   opacity: 0;
+   clip-path: polygon(50% 66%, 0% 100%, 100% 100%);
+   z-index: 198;
+   animation: flap-display 1s 1 48s forwards,
+      flap-open 5s 1 48s forwards;
+   /* border: 2px solid red; */
+}
+
+@keyframes flap-display {
+   0% { opacity: 0; }
+   100% { opacity: 1; }
+}
+
+@keyframes flap-open {
+   from {
+      bottom: 200px;
+   }
+   to {
+      bottom: 306px;
+   }
 }
 
 @keyframes  envelope-grow {
@@ -263,7 +351,8 @@ body {
    position: relative;
    font-size: 8px;
    left: 17px;
-   /* animation: return-address-grow 5s 1 20s forwards; */
+   animation:
+      return-address-grow 7s 1 35s forwards;
 }
 
 @keyframes return-address-grow {
@@ -279,7 +368,8 @@ body {
    position: relative;
    font-size: 8px;
    left: 74px;
-   /* animation: mailing-address-grow 5s 1 20s forwards; */
+   animation:
+      mailing-address-grow 7s 1 35s forwards;
 }
 
 @keyframes mailing-address-grow {
@@ -292,5 +382,69 @@ body {
       left: 250px;
    }
 }
+
+.letter {
+   position: absolute;
+   height: 300px;
+   width: 700px;
+   bottom: 0px;
+   background-color: #fff;
+   opacity: 0;
+   z-index: 199;
+      border: 2px solid darkgreen;
+   animation:
+      letter-display 1s 1 55s forwards,
+      letter-slide 5s 1 55s forwards;
+}
+
+@keyframes letter-display {
+   0% { opacity: 0; }
+   100% { opacity: 1; }
+}
+
+@keyframes letter-slide {
+   from {
+      bottom: 0px;
+   }
+   to {
+      bottom: 200px;
+   }
+}
+
+.text-container {
+   /* display: flexbox; */
+   /* align-items: center; */
+   /* justify-content: center; */
+   text-align: center;
+}
+
+.congrats {
+   font-size: 45px;
+   color: #ff0000;
+}
+
+.line-two {
+   font-size: 35px;
+   color: #000;
+}
+
+.line-three {
+   font-size: 40px;
+   font-weight: bolder;
+   /* font-weight: bold; */
+   color: #50C878;
+   border: 1px solid salmon;
+}
+
+.line-four {
+   font-size: 40px;
+   color: #000;
+}
+
+.sound {
+   content: "";
+   display: none;
+}
+
 
 

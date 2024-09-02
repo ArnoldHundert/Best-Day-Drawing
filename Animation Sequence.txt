@@ -1,21 +1,25 @@
-	animation sequence
+                       animation sequence
 
 * clouds			Immediate
 
-* mb-fade-in		7s 1 4s forwards,
-* mb-fade-in		10s 1 5s forwards,
+* house-fade-in		10s 1 5s forwards
+* mb-fade-in		10s 1 5s forwards
 
-* mailbox-slide-left		5s 10s 1 forwards;
+* house-slide-left		5s 15s 1 forwards
+* mailbox-slide-left		5s 15s 1 forwards
 
-* envelope-fade-in		8s 1 20s forwards;
-* envelope-grow		7s 1 20s forwards,
+* envelope-fade-in		8s 1 25s forwards
+* envelope-grow		7s 1 35s forwards
+* envelope-move-down	7s 1 35s forwards
 
-* return-address-grow	5s 1 20s forwards;
-* mailing-address-grow	5s 1 20s forwards;
+* return-address-grow	7s 1 35s forwards
+* mailing-address-grow	7s 1 35s forwards
 
-* envelope-rotateY		4s 1 28s forwards;
+* envelope-rotateY		4s 1 42s forwards
+* flap-display		1s 1 48s forwards
+* flap-open		5s 1 48s forwards
 
+* letter-display		1s 1 55s forwards
+* letter-slide		5s 1 55s forwards
 
-
-
-* envelope-grow		5s 1 forwards,
+* mb-display-none		1s 1 63s forwards
