@@ -7,19 +7,22 @@
 
 * house-slide-left		5s 15s 1 forwards
 * mailbox-slide-left		5s 15s 1 forwards
+--------------------------------------------------------------------
+* envelope-fade-in		*8s 1 25s forwards
+* envelope-grow		*7s 1 35s forwards
+* envelope-move-down	*7s 1 35s forwards
 
-* envelope-fade-in		8s 1 25s forwards
-* envelope-grow		7s 1 35s forwards
-* envelope-move-down	7s 1 35s forwards
+* return-address-grow	*7s 1 35s forwards
+* mailing-address-grow	*7s 1 35s forwards
 
-* return-address-grow	7s 1 35s forwards
-* mailing-address-grow	7s 1 35s forwards
+* envelope-rotateY		*4s 1 42s forwards
+* flap-display		*1s 1 48s forwards
+* flap-open		*5s 1 48s forwards
 
-* envelope-rotateY		4s 1 42s forwards
-* flap-display		1s 1 48s forwards
-* flap-open		5s 1 48s forwards
+* letter-display		*1s 1 55s forwards
+* letter-slide		*5s 1 55s forwards
 
-* letter-display		1s 1 55s forwards
-* letter-slide		5s 1 55s forwards
+* envelope-move-down-again	*5s 1 63s forwards
+* banner-fade-in		*5s 1 70s forwards
 
-* mb-display-none		1s 1 63s forwards
+
