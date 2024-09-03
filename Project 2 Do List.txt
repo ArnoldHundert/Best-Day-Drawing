@@ -1,0 +1,14 @@
+		Project 2 Do List
+
+Things still to do:
+
+* Watch/Record Shawn & Tyler's Loom video
+* Read the "STAR Method for Presentations" doc
+* Make & insert a banner for the text "Best Day EVER"
+* Animate the text
+* Research how to allow someone 2 access my repo
+* Create "teleprompt" words 2 read during loom video
+* Finish filling out the "Form" and submit it.
+
+
+* Attempt to add audio

@@ -13,6 +13,32 @@ body {
    place-items: center;
 }
 
+.instruction-wrapper {
+   position: absolute;
+   height: 130px;
+   width: 150px;
+   top: 100px;
+   left: 633px;
+   font-size: 25px;
+   font-weight: 600;
+   z-index: 500;
+   /* border: 2px solid yellow; */
+}
+
+.instruction {
+   background-color: #009cff;
+   height: 75px;
+   width: 150px;
+   text-align: center;
+   padding-top: 10px;
+   border-radius: 15px;
+   color: #fff;
+}
+
+.d-arrow {
+   font-size: 50px;
+}
+
 .start-button {
    background-color:#ff0000;
    height: 100px;
@@ -97,7 +123,6 @@ body {
    animation: 
    house-fade-in 10s 1 5s forwards,
    house-slide-left 5s 15s 1 forwards;
-   /* house-slide-left 5s 10s 1 forwards; */
    /* border: 2px solid green; */
 }
 
@@ -424,7 +449,6 @@ body {
 .line-three {
    font-size: 40px;
    font-weight: bolder;
-   /* font-weight: bold; */
    color: #50C878;
    border: 1px solid salmon;
 }
@@ -469,7 +493,4 @@ body {
    color: #009cff;
    font-size: 52px;
 }
-
-
-
 
